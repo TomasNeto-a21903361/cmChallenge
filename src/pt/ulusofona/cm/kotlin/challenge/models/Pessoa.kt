@@ -8,44 +8,41 @@ import java.util.*
 
 class Pessoa(
     val nome: String,
-    val veiculos : MutableList<Veiculo>?,
     val dataDeNascimento: Date,
-    val carta: Carta?,
-    val posicao: Posicao
 ) : Movimentavel {
-    constructor(nome: String,dataDeNascimento: Date) : this(nome,null, dataDeNascimento, null, Posicao())
+
+    val veiculos : MutableList<Veiculo> = mutableListOf<Veiculo>()
+    val carta: Carta? = null
+    val posicao: Posicao = Posicao()
+
 
     fun comprarVeiculo(veiculo: Veiculo) {
-        veiculos?.add(veiculo)
+        veiculos.add(veiculo)
     }
 
     fun pesquisarVeiculo(identficador: String): Veiculo {
-        if (veiculos != null) {
-            for (veiculo in veiculos){
-                if (identficador == veiculo.identificador){
-                    return veiculo
-                }
+        for (veiculo in veiculos){
+            if (identficador == veiculo.identificador){
+                return veiculo
             }
         }
         throw VeiculoNaoEncontradoException()
     }
 
     fun venderVeiculo(veiculo: Veiculo, comprador: Pessoa) {
-        if (comprador.veiculos?.contains(veiculo) == false){
-            veiculos?.remove(veiculo)
+        if (!comprador.veiculos.contains(veiculo)){
+            veiculos.remove(veiculo)
             veiculo.dataDeAquisicao = Date()
             comprador.veiculos.add(veiculo)
         }
     }
 
     fun moverVeiculoPara(identficador: String, x: Int, y: Int) {
-        if (veiculos != null) {
-            for (veiculo in veiculos){
-                if (veiculo.identificador == identficador){
-                    //checkcartas e isso throw PessoaSemCartaException()
-                    posicao.x  = x
-                    posicao.y = y
-                }
+        for (veiculo in veiculos){
+            if (veiculo.identificador == identficador){
+                //checkcartas e isso throw PessoaSemCartaException()
+                posicao.x  = x
+                posicao.y = y
             }
         }
     }

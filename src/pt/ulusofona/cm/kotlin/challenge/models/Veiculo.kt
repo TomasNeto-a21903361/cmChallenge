@@ -5,11 +5,12 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
 open class Veiculo(
-    val identificador: String,
-    val posicao: Posicao,
-    var dataDeAquisicao: Date?
+    val identificador: String
 ) : Movimentavel{
-    constructor(identificador: String) : this(identificador,Posicao(),null)
+
+    val posicao: Posicao = Posicao()
+    var dataDeAquisicao: Date = Date()
+
 
     open fun requerCarta():Boolean{
         return false
