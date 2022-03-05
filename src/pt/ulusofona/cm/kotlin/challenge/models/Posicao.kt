@@ -6,7 +6,7 @@ data class Posicao(
 ){
     fun alterarPosicaoPara(x: Int,y: Int) {
         this.x = x
-        this.y = x
+        this.y = y
     }
 
     override fun toString(): String {
