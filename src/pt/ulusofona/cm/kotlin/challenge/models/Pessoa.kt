@@ -11,7 +11,7 @@ data class Pessoa(
     val dataDeNascimento: Date
 ) : Movimentavel {
 
-    val veiculos : MutableList<Veiculo> = mutableListOf<Veiculo>()
+    val veiculos = mutableListOf<Veiculo>()
     val carta: Carta? = null
     val posicao: Posicao = Posicao()
 
@@ -26,7 +26,9 @@ data class Pessoa(
                 return veiculo
             }
         }
-          throw VeiculoNaoEncontradoException()
+        val test = Veiculo("o")
+        return test
+          //throw VeiculoNaoEncontradoException()
     }
 
     fun venderVeiculo(veiculo: Veiculo, comprador: Pessoa) {
