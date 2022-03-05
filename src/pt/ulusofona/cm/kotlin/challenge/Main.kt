@@ -9,13 +9,13 @@ fun main() {
     val motor = Motor(20,200)
     val date = Date()
     val veiculo = Veiculo("yes")
-    val veiculo1 = Veiculo("yews")
     val carro = Carro("gd",motor)
     val pessoa = Pessoa("ex",date)
     val bike = Bicicleta("kek")
-    pessoa.comprarVeiculo(bike)
-    pessoa.moverPara(0,1)
-    pessoa.moverPara(0,1)
+
+    println(motor.estaLigado())
+    motor.desligar()
+    println(motor.estaLigado())
 }
 
 // EXCEPCOES - MenorDeIdadeException | PessoaSemCartaException

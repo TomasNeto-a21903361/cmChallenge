@@ -22,18 +22,14 @@ data class Carro(
         if (motor.ligado){
             motor.ligado = !estaLigado()
         }
-        else {
             throw VeiculoLigadoException()
-        }
     }
 
     override fun desligar() {
         if (!motor.ligado) {
             motor.ligado = estaLigado()
         }
-        else {
             throw VeiculoDesligadoException()
-        }
     }
 
     override fun toString(): String {

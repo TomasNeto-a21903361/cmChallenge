@@ -16,9 +16,7 @@ data class Motor(
         if (ligado){
             ligado = !estaLigado()
         }
-        else {
             throw VeiculoLigadoException()
-        }
 
     }
 
@@ -26,9 +24,7 @@ data class Motor(
         if (!ligado) {
             ligado = estaLigado()
         }
-        else {
             throw VeiculoDesligadoException()
-        }
     }
 
     override fun toString(): String {
