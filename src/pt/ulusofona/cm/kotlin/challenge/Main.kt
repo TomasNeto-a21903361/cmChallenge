@@ -14,6 +14,10 @@ fun main() {
     val bike = Bicicleta("kek")
 
 
+    println(motor.estaLigado())
+    motor.ligar()
+
+
 
 }
 

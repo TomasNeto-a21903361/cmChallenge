@@ -9,24 +9,28 @@ data class Motor(
     val cilindrada: Int
 ) : Ligavel {
 
-    var ligado: Boolean = estaLigado() //false
+    var ligado: Boolean = false
 
 
     override fun ligar() {
-        if (ligado == !estaLigado()){
+        if (ligado){
             throw VeiculoLigadoException()
         }
         else {
-            ligado = !estaLigado()
+            ligado = true
         }
 
     }
 
     override fun desligar() {
-        if (ligado == estaLigado()) {
+        if (!ligado) {
             throw VeiculoDesligadoException()
         }
-           ligado = estaLigado()
+           ligado = false
+    }
+
+    override fun estaLigado(): Boolean {
+        return ligado
     }
 
     override fun toString(): String {
