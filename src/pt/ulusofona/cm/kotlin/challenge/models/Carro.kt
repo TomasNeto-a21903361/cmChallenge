@@ -16,6 +16,14 @@ data class Carro(
         super<Veiculo>.moverPara(x, y)
     }
 
+    override fun ligar() {
+        motor.ligar()
+    }
+
+    override fun desligar() {
+        motor.desligar()
+    }
+
     override fun toString(): String {
         return "Carro | $identificador | $dataDeAquisicao | $posicao"
     }
