@@ -16,13 +16,7 @@ data class Carro(
     }
 
     override fun moverPara(x: Int, y: Int) {
-        if (posicao.x != x || posicao.y != y){
-            posicao.x  = x
-            posicao.y  = y
-        }
-        else{
-            throw AlterarPosicaoException()
-        }
+        super<Veiculo>.moverPara(x, y)
     }
 
     override fun ligar() {
