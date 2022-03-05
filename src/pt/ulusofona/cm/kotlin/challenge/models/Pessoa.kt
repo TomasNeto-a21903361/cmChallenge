@@ -43,7 +43,7 @@ data class Pessoa(
     fun moverVeiculoPara(identficador: String, x: Int, y: Int) {
         for (veiculo in veiculos){
             if (veiculo.identificador == identficador){
-                if (veiculo is Carro && !temCarta())
+                if (veiculo.requerCarta() == true && !temCarta())
                 {
                     throw PessoaSemCartaException(nome)
                 }
