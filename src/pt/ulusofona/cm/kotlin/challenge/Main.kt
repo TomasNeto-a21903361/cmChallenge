@@ -10,7 +10,7 @@ fun main() {
     val date = Date()
     val veiculo = Veiculo("yes")
     val carro = Carro("gd",motor)
-    val pessoa = Pessoa("ex",date)
+    //val pessoa = Pessoa("ex",date)
     val bike = Bicicleta("kek")
 
 

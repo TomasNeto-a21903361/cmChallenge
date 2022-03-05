@@ -9,7 +9,7 @@ import java.util.*
 
 data class Pessoa(
     val nome: String,
-    val dataDeNascimento: Date
+    val dataDeNascimento: String
 ) : Movimentavel {
 
     val veiculos = mutableListOf<Veiculo>()
