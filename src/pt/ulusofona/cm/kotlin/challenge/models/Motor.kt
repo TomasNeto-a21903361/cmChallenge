@@ -4,10 +4,10 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 
 class Motor(
     val cavalos: Int,
-    val cilindrada: Int,
-    val ligado: Boolean?
+    val cilindrada: Int
 ) : Ligavel {
-    constructor(cavalos: Int,cilindrada: Int) : this(cavalos,cilindrada,null)
+
+    val ligado: Boolean = false
 
     override fun toString(): String {
         return "Motor | $cavalos | $cilindrada"
