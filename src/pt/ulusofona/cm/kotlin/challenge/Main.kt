@@ -13,9 +13,8 @@ fun main() {
     val pessoa = Pessoa("ex",date)
     val bike = Bicicleta("kek")
 
-    println(motor.estaLigado())
-    motor.desligar()
-    println(motor.estaLigado())
+
+
 }
 
 // EXCEPCOES - MenorDeIdadeException | PessoaSemCartaException
