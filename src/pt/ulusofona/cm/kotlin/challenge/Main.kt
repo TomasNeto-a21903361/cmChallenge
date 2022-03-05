@@ -14,6 +14,7 @@ fun main() {
     val pessoa = Pessoa("ex",date)
     val bike = Bicicleta("kek")
     veiculo.moverPara(0,1)
+    pessoa.pesquisarVeiculo("xd")
 
     println(carro)
     println(bike)

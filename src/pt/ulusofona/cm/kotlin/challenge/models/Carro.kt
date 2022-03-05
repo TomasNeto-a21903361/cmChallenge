@@ -3,10 +3,10 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Carro(
-    identificador: String,
+data class Carro(
+    private val _identificador: String,
     val motor: Motor
-) : Veiculo(identificador), Ligavel, Movimentavel {
+) : Veiculo(_identificador), Ligavel, Movimentavel {
 
     override fun requerCarta(): Boolean {
         return true

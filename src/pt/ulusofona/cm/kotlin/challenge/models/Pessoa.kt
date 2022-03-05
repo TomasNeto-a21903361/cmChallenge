@@ -6,7 +6,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
-class Pessoa(
+data class Pessoa(
     val nome: String,
     val dataDeNascimento: Date
 ) : Movimentavel {
@@ -26,7 +26,7 @@ class Pessoa(
                 return veiculo
             }
         }
-        throw VeiculoNaoEncontradoException()
+         return throw VeiculoNaoEncontradoException()
     }
 
     fun venderVeiculo(veiculo: Veiculo, comprador: Pessoa) {
