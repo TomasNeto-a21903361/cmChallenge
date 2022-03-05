@@ -6,5 +6,9 @@ import java.util.*
 
 
 fun main() {
-
+    val motor = Motor(20,200)
+    val veiculo = Veiculo("yes")
+    val carro = Carro("gd",motor)
+    val pessoa = Pessoa("ex",Date())
+    val bike = Bicicleta("kek")
 }
