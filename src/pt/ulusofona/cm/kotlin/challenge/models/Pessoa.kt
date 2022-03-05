@@ -17,6 +17,7 @@ data class Pessoa(
 
 
     fun comprarVeiculo(veiculo: Veiculo) {
+        veiculo.dataDeAquisicao = Date()
         veiculos.add(veiculo)
     }
 
@@ -26,7 +27,7 @@ data class Pessoa(
                 return veiculo
             }
         }
-         return throw VeiculoNaoEncontradoException()
+          throw VeiculoNaoEncontradoException()
     }
 
     fun venderVeiculo(veiculo: Veiculo, comprador: Pessoa) {

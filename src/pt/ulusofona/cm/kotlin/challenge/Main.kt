@@ -7,19 +7,18 @@ import java.util.*
 
 fun main() {
     val motor = Motor(20,200)
-    val posicao = Posicao()
     val date = Date()
     val veiculo = Veiculo("yes")
     val carro = Carro("gd",motor)
     val pessoa = Pessoa("ex",date)
     val bike = Bicicleta("kek")
+    pessoa.comprarVeiculo(carro)
     veiculo.moverPara(0,1)
-    pessoa.pesquisarVeiculo("xd")
+    println(pessoa.pesquisarVeiculo("gd"))
 
     println(carro)
     println(bike)
     println(pessoa)
-    print(AlterarPosicaoException("lmao"))
 }
 
 // EXCEPCOES - MenorDeIdadeException | PessoaSemCartaException
