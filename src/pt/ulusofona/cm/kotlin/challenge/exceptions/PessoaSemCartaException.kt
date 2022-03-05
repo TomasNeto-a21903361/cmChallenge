@@ -1,6 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge.exceptions
 
-class PessoaSemCartaException(override val message: String = "Precisa de carta para conduzir este veículo")
-    : Exception(message) {
-
+class PessoaSemCartaException(val nome: String,override val message: String = "$nome não tem carta para " +
+        "conduzir o veículo indicado") : Exception(message) {
 }

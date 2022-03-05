@@ -1,5 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge.exceptions
 
-class MenorDeIdadeException(val nome: String,override val message: String = "$nome não tem carta para " +
-        "conduzir o veículo indicado") : Exception(message) {
+class MenorDeIdadeException(override val message: String = "não tem idade para " +
+        "tirar a carta") : Exception(message) {
 }

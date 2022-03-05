@@ -2,6 +2,7 @@ package pt.ulusofona.cm.kotlin.challenge.models
 
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
@@ -42,9 +43,16 @@ data class Pessoa(
     fun moverVeiculoPara(identficador: String, x: Int, y: Int) {
         for (veiculo in veiculos){
             if (veiculo.identificador == identficador){
-                //checkcartas e isso throw PessoaSemCartaException()
-                posicao.x  = x
-                posicao.y = y
+                if (veiculo is Carro && !temCarta())
+                {
+                    throw PessoaSemCartaException(nome)
+                }
+
+                if (veiculo.posicao.x == x || veiculo.posicao.y == y){
+                    throw AlterarPosicaoException()
+                }
+
+                veiculo.posicao.alterarPosicaoPara(x,y)
             }
         }
     }
@@ -65,8 +73,7 @@ data class Pessoa(
 
     override fun moverPara(x: Int, y: Int) {
         if (posicao.x != x || posicao.y != y){
-            posicao.x  = x
-            posicao.y  = y
+            posicao.alterarPosicaoPara(x,y)
         }
         else{
              throw AlterarPosicaoException()
