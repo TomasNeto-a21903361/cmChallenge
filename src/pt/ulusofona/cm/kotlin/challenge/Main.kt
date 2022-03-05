@@ -11,14 +11,4 @@ fun main() {
     val carro = Carro("gd",motor)
     val pessoa = Pessoa("ex",Date())
     val bike = Bicicleta("kek")
-
-
-    println(motor.estaLigado())
-    motor.ligar()
-
-
-
 }
-
-// EXCEPCOES - MenorDeIdadeException | PessoaSemCartaException
-// TROCAR FORMATO DE DATA
