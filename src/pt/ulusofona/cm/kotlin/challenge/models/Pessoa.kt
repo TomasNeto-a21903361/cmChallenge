@@ -11,9 +11,9 @@ data class Pessoa(
     val dataDeNascimento: Date
 ) : Movimentavel {
 
-    private val veiculos : MutableList<Veiculo> = mutableListOf<Veiculo>()
-    private val carta: Carta? = null
-    private val posicao: Posicao = Posicao()
+    val veiculos : MutableList<Veiculo> = mutableListOf<Veiculo>()
+    val carta: Carta? = null
+    val posicao: Posicao = Posicao()
 
 
     fun comprarVeiculo(veiculo: Veiculo) {
