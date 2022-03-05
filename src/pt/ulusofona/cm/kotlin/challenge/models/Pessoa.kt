@@ -29,11 +29,13 @@ data class Pessoa(
           throw VeiculoNaoEncontradoException()
     }
 
-    fun venderVeiculo(veiculo: Veiculo, comprador: Pessoa) {
-        if (!comprador.veiculos.contains(veiculo)){
-            veiculos.remove(veiculo)
-            veiculo.dataDeAquisicao = Date()
-            comprador.veiculos.add(veiculo)
+    fun venderVeiculo(identificador: String, comprador: Pessoa) {
+        for (veiculo in veiculos) {
+            if (identificador == veiculo.identificador) {
+                veiculo.dataDeAquisicao = Date()
+                comprador.veiculos.add(veiculo)
+                veiculos.remove(veiculo)
+            }
         }
     }
 
