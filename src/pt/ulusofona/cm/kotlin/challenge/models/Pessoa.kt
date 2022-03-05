@@ -20,15 +20,13 @@ data class Pessoa(
         veiculos.add(veiculo)
     }
 
-    fun pesquisarVeiculo(identficador: String): Veiculo {
+    fun pesquisarVeiculo(identificador: String): Veiculo {
         for (veiculo in veiculos){
-            if (identficador == veiculo.identificador){
+            if (identificador == veiculo.identificador){
                 return veiculo
             }
         }
-        val test = Veiculo("o")
-        return test
-          //throw VeiculoNaoEncontradoException()
+          throw VeiculoNaoEncontradoException()
     }
 
     fun venderVeiculo(veiculo: Veiculo, comprador: Pessoa) {
