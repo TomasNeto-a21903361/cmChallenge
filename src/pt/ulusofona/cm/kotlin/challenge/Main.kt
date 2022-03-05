@@ -13,14 +13,9 @@ fun main() {
     val carro = Carro("gd",motor)
     val pessoa = Pessoa("ex",date)
     val bike = Bicicleta("kek")
-    pessoa.comprarVeiculo(veiculo)
-    pessoa.comprarVeiculo(veiculo1)
-    veiculo.moverPara(0,1)
-    println(pessoa.pesquisarVeiculo("yes"))
-
-    println(carro)
-    println(bike)
-    println(pessoa)
+    pessoa.comprarVeiculo(bike)
+    pessoa.moverPara(0,1)
+    pessoa.moverPara(0,1)
 }
 
 // EXCEPCOES - MenorDeIdadeException | PessoaSemCartaException

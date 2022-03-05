@@ -52,7 +52,7 @@ data class Pessoa(
                     throw AlterarPosicaoException()
                 }
 
-                veiculo.posicao.alterarPosicaoPara(x,y)
+                 veiculo.posicao.alterarPosicaoPara(x,y)
             }
         }
     }
@@ -73,7 +73,8 @@ data class Pessoa(
 
     override fun moverPara(x: Int, y: Int) {
         if (posicao.x != x || posicao.y != y){
-            posicao.alterarPosicaoPara(x,y)
+            posicao.x = x
+            posicao.y = y
         }
         else{
              throw AlterarPosicaoException()
