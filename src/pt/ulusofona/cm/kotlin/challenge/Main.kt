@@ -6,11 +6,11 @@ import java.util.*
 
 
 fun main() {
-    val motor = Motor(20,200)
+    /*val motor = Motor(20,200)
     val date = Date()
     val veiculo = Veiculo("yes")
     val carro = Carro("gd",motor)
-    val bike = Bicicleta("kek")
+    val bike = Bicicleta("kek")*/
 
 
 
